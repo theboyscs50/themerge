@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		125BABD06DDB8F2CE7DAA72E /* Pods_Tour_Harvard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A811AB8C2DFDBD3E4F5AFC8E /* Pods_Tour_Harvard.framework */; };
 		4C64140C1DE8E1A2000571EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64140B1DE8E1A2000571EC /* AppDelegate.swift */; };
 		4C64140E1DE8E1A2000571EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64140D1DE8E1A2000571EC /* ViewController.swift */; };
 		4C6414111DE8E1A2000571EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C64140F1DE8E1A2000571EC /* Main.storyboard */; };
@@ -14,6 +15,8 @@
 		4C6414161DE8E1A2000571EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6414141DE8E1A2000571EC /* LaunchScreen.storyboard */; };
 		4C6414211DE8E1A2000571EC /* Tour_HarvardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6414201DE8E1A2000571EC /* Tour_HarvardTests.swift */; };
 		4C64142C1DE8E1A2000571EC /* Tour_HarvardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64142B1DE8E1A2000571EC /* Tour_HarvardUITests.swift */; };
+		C97FDF020CA146BDA0374753 /* Pods_Tour_HarvardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */; };
+		F26454D9CBDF9201ED90CF79 /* Pods_Tour_HarvardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B17D39DCA9F8F146CAE03F2 /* Pods-Tour Harvard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour Harvard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tour Harvard/Pods-Tour Harvard.release.xcconfig"; sourceTree = "<group>"; };
 		4C6414081DE8E1A2000571EC /* Tour Harvard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tour Harvard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C64140B1DE8E1A2000571EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C64140D1DE8E1A2000571EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		4C6414271DE8E1A2000571EC /* Tour HarvardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tour HarvardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C64142B1DE8E1A2000571EC /* Tour_HarvardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour_HarvardUITests.swift; sourceTree = "<group>"; };
 		4C64142D1DE8E1A2000571EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tour_HarvardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tour_HarvardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F9478966A313EE7A58BBC0 /* Pods-Tour HarvardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardTests/Pods-Tour HarvardTests.release.xcconfig"; sourceTree = "<group>"; };
+		9BCE9E2E18BDB7E4C73BCCA4 /* Pods-Tour HarvardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardUITests/Pods-Tour HarvardUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A6AFEC6E9BB33EC73D9B50F9 /* Pods-Tour HarvardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardUITests/Pods-Tour HarvardUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A811AB8C2DFDBD3E4F5AFC8E /* Pods_Tour_Harvard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tour_Harvard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBD4380272ADF6308F8AD56E /* Pods-Tour Harvard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour Harvard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tour Harvard/Pods-Tour Harvard.debug.xcconfig"; sourceTree = "<group>"; };
+		EBBB02BCE9B4D2A193B40AE9 /* Pods-Tour HarvardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardTests/Pods-Tour HarvardTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125BABD06DDB8F2CE7DAA72E /* Pods_Tour_Harvard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F26454D9CBDF9201ED90CF79 /* Pods_Tour_HarvardTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97FDF020CA146BDA0374753 /* Pods_Tour_HarvardUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		444E49088A3A2516DD2E6123 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A811AB8C2DFDBD3E4F5AFC8E /* Pods_Tour_Harvard.framework */,
+				5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */,
+				862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4C6413FF1DE8E1A1000571EC = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				4C64141F1DE8E1A2000571EC /* Tour HarvardTests */,
 				4C64142A1DE8E1A2000571EC /* Tour HarvardUITests */,
 				4C6414091DE8E1A2000571EC /* Products */,
+				9E5560CDA630B63D58922D1F /* Pods */,
+				444E49088A3A2516DD2E6123 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +152,19 @@
 			path = "Tour HarvardUITests";
 			sourceTree = "<group>";
 		};
+		9E5560CDA630B63D58922D1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBD4380272ADF6308F8AD56E /* Pods-Tour Harvard.debug.xcconfig */,
+				2B17D39DCA9F8F146CAE03F2 /* Pods-Tour Harvard.release.xcconfig */,
+				EBBB02BCE9B4D2A193B40AE9 /* Pods-Tour HarvardTests.debug.xcconfig */,
+				99F9478966A313EE7A58BBC0 /* Pods-Tour HarvardTests.release.xcconfig */,
+				A6AFEC6E9BB33EC73D9B50F9 /* Pods-Tour HarvardUITests.debug.xcconfig */,
+				9BCE9E2E18BDB7E4C73BCCA4 /* Pods-Tour HarvardUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C6414301DE8E1A2000571EC /* Build configuration list for PBXNativeTarget "Tour Harvard" */;
 			buildPhases = (
+				064EB3ABA2F7500C3A9E2DF2 /* [CP] Check Pods Manifest.lock */,
 				4C6414041DE8E1A1000571EC /* Sources */,
 				4C6414051DE8E1A1000571EC /* Frameworks */,
 				4C6414061DE8E1A1000571EC /* Resources */,
+				8F266F2C459FA52B543B0909 /* [CP] Embed Pods Frameworks */,
+				F2DB81FA9C43C7BF7BB42BF3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C6414331DE8E1A2000571EC /* Build configuration list for PBXNativeTarget "Tour HarvardTests" */;
 			buildPhases = (
+				A4BC5143FF48102E00EDC576 /* [CP] Check Pods Manifest.lock */,
 				4C6414181DE8E1A2000571EC /* Sources */,
 				4C6414191DE8E1A2000571EC /* Frameworks */,
 				4C64141A1DE8E1A2000571EC /* Resources */,
+				0BD3BE5F157E8DCFE077FE59 /* [CP] Embed Pods Frameworks */,
+				5134EED4546D789C9DF0E5F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C6414361DE8E1A2000571EC /* Build configuration list for PBXNativeTarget "Tour HarvardUITests" */;
 			buildPhases = (
+				596088B5841E0AD1E0AB1310 /* [CP] Check Pods Manifest.lock */,
 				4C6414231DE8E1A2000571EC /* Sources */,
 				4C6414241DE8E1A2000571EC /* Frameworks */,
 				4C6414251DE8E1A2000571EC /* Resources */,
+				65BA850B5618FAB37A4691DC /* [CP] Embed Pods Frameworks */,
+				20D229B87F01054A65D377C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +302,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		064EB3ABA2F7500C3A9E2DF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0BD3BE5F157E8DCFE077FE59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tour HarvardTests/Pods-Tour HarvardTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20D229B87F01054A65D377C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tour HarvardUITests/Pods-Tour HarvardUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5134EED4546D789C9DF0E5F2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tour HarvardTests/Pods-Tour HarvardTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		596088B5841E0AD1E0AB1310 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		65BA850B5618FAB37A4691DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tour HarvardUITests/Pods-Tour HarvardUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F266F2C459FA52B543B0909 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tour Harvard/Pods-Tour Harvard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4BC5143FF48102E00EDC576 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F2DB81FA9C43C7BF7BB42BF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tour Harvard/Pods-Tour Harvard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C6414041DE8E1A1000571EC /* Sources */ = {
@@ -357,7 +544,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -401,6 +588,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -410,10 +598,12 @@
 		};
 		4C6414311DE8E1A2000571EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBD4380272ADF6308F8AD56E /* Pods-Tour Harvard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Tour Harvard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "cs50.Tour-Harvard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -422,6 +612,7 @@
 		};
 		4C6414321DE8E1A2000571EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B17D39DCA9F8F146CAE03F2 /* Pods-Tour Harvard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Tour Harvard/Info.plist";
@@ -434,11 +625,13 @@
 		};
 		4C6414341DE8E1A2000571EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBBB02BCE9B4D2A193B40AE9 /* Pods-Tour HarvardTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Tour HarvardTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "cs50.Tour-HarvardTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -448,6 +641,7 @@
 		};
 		4C6414351DE8E1A2000571EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99F9478966A313EE7A58BBC0 /* Pods-Tour HarvardTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -462,6 +656,7 @@
 		};
 		4C6414371DE8E1A2000571EC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6AFEC6E9BB33EC73D9B50F9 /* Pods-Tour HarvardUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Tour HarvardUITests/Info.plist";
@@ -475,6 +670,7 @@
 		};
 		4C6414381DE8E1A2000571EC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BCE9E2E18BDB7E4C73BCCA4 /* Pods-Tour HarvardUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Tour HarvardUITests/Info.plist";
@@ -505,6 +701,7 @@
 				4C6414321DE8E1A2000571EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C6414331DE8E1A2000571EC /* Build configuration list for PBXNativeTarget "Tour HarvardTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +710,7 @@
 				4C6414351DE8E1A2000571EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C6414361DE8E1A2000571EC /* Build configuration list for PBXNativeTarget "Tour HarvardUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +719,7 @@
 				4C6414381DE8E1A2000571EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
