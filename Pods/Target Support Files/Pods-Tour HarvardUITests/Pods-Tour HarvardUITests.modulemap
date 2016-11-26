@@ -1,0 +1,6 @@
+framework module Pods_Tour_HarvardUITests {
+  umbrella header "Pods-Tour HarvardUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
