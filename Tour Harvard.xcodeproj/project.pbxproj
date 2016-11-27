@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		125BABD06DDB8F2CE7DAA72E /* Pods_Tour_Harvard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A811AB8C2DFDBD3E4F5AFC8E /* Pods_Tour_Harvard.framework */; };
+		125BABD06DDB8F2CE7DAA72E /* Pods_Tour_Harvard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A811AB8C2DFDBD3E4F5AFC8E /* Pods_Tour_Harvard.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4C64140C1DE8E1A2000571EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64140B1DE8E1A2000571EC /* AppDelegate.swift */; };
 		4C64140E1DE8E1A2000571EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64140D1DE8E1A2000571EC /* ViewController.swift */; };
 		4C6414111DE8E1A2000571EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C64140F1DE8E1A2000571EC /* Main.storyboard */; };
@@ -601,6 +601,7 @@
 			baseConfigurationReference = DBD4380272ADF6308F8AD56E /* Pods-Tour Harvard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Tour Harvard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -615,6 +616,7 @@
 			baseConfigurationReference = 2B17D39DCA9F8F146CAE03F2 /* Pods-Tour Harvard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Tour Harvard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cs50.Tour-Harvard";
