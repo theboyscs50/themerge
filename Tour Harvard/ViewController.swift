@@ -9,11 +9,17 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,9 +43,14 @@ class ViewController: UIViewController {
         marker.title = "Wigglesworth"
         marker.snippet = "Dorm"
         marker.map = mapView
+        
+        mapView.settings.compassButton = true
+        mapView.settings.myLocationButton = true
+        mapView.animate(toViewingAngle: 45)
     }
-
-    // 'nathan'
-
+    
+   
 }
+
+
 
