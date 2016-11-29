@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +22,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="1459871708_harvard-logo" translatesAutoresizingMaskIntoConstraints="NO" id="f13-lT-TRd">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="1459871708_harvard-logo" translatesAutoresizingMaskIntoConstraints="NO" id="f13-lT-TRd">
                                 <rect key="frame" x="10" y="9" width="337" height="91"/>
-                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pvr-uZ-3CQ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pvr-uZ-3CQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="860"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="860" id="NJ0-dN-AUY"/>
+                                </constraints>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="f13-lT-TRd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="0cb-0b-Mqf"/>
+                            <constraint firstItem="f13-lT-TRd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="9" id="5uh-bZ-F1f"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f13-lT-TRd" secondAttribute="bottom" constant="567" id="FAS-O5-PBV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f13-lT-TRd" secondAttribute="trailing" constant="12" id="bFe-FW-jtr"/>
+                            <constraint firstAttribute="trailing" secondItem="Pvr-uZ-3CQ" secondAttribute="trailing" id="sXh-B7-88H"/>
+                            <constraint firstItem="Pvr-uZ-3CQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vJS-f1-rNm"/>
+                            <constraint firstItem="Pvr-uZ-3CQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xRC-O3-vzU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="map" destination="Pvr-uZ-3CQ" id="JLE-1p-EkP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
