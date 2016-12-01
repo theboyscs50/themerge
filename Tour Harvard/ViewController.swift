@@ -80,9 +80,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
             
             // 2. region data
-            let title = "Lorrenzillo's"
-            let coordinate = CLLocationCoordinate2DMake(37.703026, -121.759735)
-            let regionRadius = 300.0
+            let title = "Wigg"
+            let coordinate = CLLocationCoordinate2DMake(42.373076, -71.117164)
+            let regionRadius = 30.0
             
             // 3. setup region
             let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,
@@ -90,10 +90,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             locationManager.startMonitoring(for: region)
             
             // 4. setup annotation
-            let restaurantAnnotation = MKPointAnnotation()
-            restaurantAnnotation.coordinate = coordinate;
-            restaurantAnnotation.title = "\(title)";
-            map.addAnnotation(restaurantAnnotation)
+            //let restaurantAnnotation = MKPointAnnotation()
+            //restaurantAnnotation.coordinate = coordinate;
+            //restaurantAnnotation.title = "\(title)";
+            //map.addAnnotation(restaurantAnnotation)
             
             // 5. setup circle
             let circle = MKCircle(center: coordinate, radius: regionRadius)
@@ -112,7 +112,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         return circleRenderer
     }
     
-
+  
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+      
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        let alert = UIAlertController(title: "Alert", message: "exiteded", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 
 
 }
