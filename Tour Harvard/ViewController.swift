@@ -137,14 +137,20 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         return nil
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let Pins = view.annotation as! Pins
         let placeName = Pins.title
         let placeInfo = Pins.info
         
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        ac.addAction(UIAlertAction(title: "OK", style: .default) { (_) -> Void in
+            
+          self.performSegue(withIdentifier: "moreInfo", sender: nil)
+            
+        })
         present(ac, animated: true)
+
+
     }
     
     
@@ -217,6 +223,5 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         print("NO")
     }
     
-
-
+  
 }

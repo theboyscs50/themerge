@@ -45,16 +45,33 @@
                     </view>
                     <connections>
                         <outlet property="map" destination="Pvr-uZ-3CQ" id="JLE-1p-EkP"/>
+                        <segue destination="c5Z-OM-cBv" kind="show" identifier="moreInfo" id="Qlm-i0-PRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-114" y="-128"/>
+            <point key="canvasLocation" x="-738" y="-274"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="XIN-N5-Wqv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0Z-Dw-SJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="c5Z-OM-cBv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7IJ-6e-Zn7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NC6-Fa-zlC" kind="relationship" relationship="rootViewController" id="5je-x0-2PE"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="282" y="-254"/>
+        </scene>
+        <!--InfoVC-->
         <scene sceneID="XFY-y8-b9m">
             <objects>
-                <viewController id="NC6-Fa-zlC" customClass="ViewController" customModule="Tour_Harvard" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NC6-Fa-zlC" customClass="infoVC" customModule="Tour_Harvard" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zba-DF-cXM"/>
                         <viewControllerLayoutGuide type="bottom" id="tH5-qc-I6c"/>
@@ -64,10 +81,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pVh-F6-tL2">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7lJ-B9-tO5">
+                            <rect key="frame" x="113" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Back to Map"/>
+                            <connections>
+                                <action selector="backButton:" destination="NC6-Fa-zlC" eventType="touchUpInside" id="dAK-yw-Osq"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XE4-oW-D9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725.60000000000002" y="-174.06296851574214"/>
+            <point key="canvasLocation" x="1388" y="-275"/>
         </scene>
     </scenes>
     <resources>
