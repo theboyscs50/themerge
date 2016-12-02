@@ -14,6 +14,7 @@
 		4C6414161DE8E1A2000571EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6414141DE8E1A2000571EC /* LaunchScreen.storyboard */; };
 		4C6414211DE8E1A2000571EC /* Tour_HarvardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6414201DE8E1A2000571EC /* Tour_HarvardTests.swift */; };
 		4C64142C1DE8E1A2000571EC /* Tour_HarvardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64142B1DE8E1A2000571EC /* Tour_HarvardUITests.swift */; };
+		4CDBBC921DF1181C00FAF60D /* Pins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDBBC911DF1181C00FAF60D /* Pins.swift */; };
 		C97FDF020CA146BDA0374753 /* Pods_Tour_HarvardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */; };
 		F26454D9CBDF9201ED90CF79 /* Pods_Tour_HarvardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */; };
 		F9BFB5111DEE1C0D00D9DE59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BFB5101DEE1C0D00D9DE59 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		4C6414271DE8E1A2000571EC /* Tour HarvardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tour HarvardUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C64142B1DE8E1A2000571EC /* Tour_HarvardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour_HarvardUITests.swift; sourceTree = "<group>"; };
 		4C64142D1DE8E1A2000571EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CDBBC911DF1181C00FAF60D /* Pins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pins.swift; path = ../Pins.swift; sourceTree = "<group>"; };
 		5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tour_HarvardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tour_HarvardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F9478966A313EE7A58BBC0 /* Pods-Tour HarvardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardTests/Pods-Tour HarvardTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		4C64140A1DE8E1A2000571EC /* Tour Harvard */ = {
 			isa = PBXGroup;
 			children = (
+				4CDBBC911DF1181C00FAF60D /* Pins.swift */,
 				4C64140B1DE8E1A2000571EC /* AppDelegate.swift */,
 				F9BFB5101DEE1C0D00D9DE59 /* ViewController.swift */,
 				4C64140F1DE8E1A2000571EC /* Main.storyboard */,
@@ -463,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CDBBC921DF1181C00FAF60D /* Pins.swift in Sources */,
 				F9BFB5111DEE1C0D00D9DE59 /* ViewController.swift in Sources */,
 				4C64140C1DE8E1A2000571EC /* AppDelegate.swift in Sources */,
 			);
