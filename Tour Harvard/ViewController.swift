@@ -95,16 +95,58 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             Pins(title: "Bureau of Study Council", coordinate: CLLocationCoordinate2D(latitude: 42.372571, longitude: -71.117413), info: "Academic Resources Building")
         ]
         
+        let lengthOfArray = locations.count
+        for i in 0..<lengthOfArray {
+            let location = locations[i]
+            map.addAnnotations([location as MKAnnotation])
+        }
         
-        map.addAnnotations([locations as! MKAnnotation])
-        
-        
-        
+
         
         setupData()
         
         
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // 1
+        let identifier = "Pins"
+        
+        // 2
+        if annotation is Pins {
+            // 3
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            
+            if annotationView == nil {
+                //4
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                annotationView!.canShowCallout = true
+                
+                // 5
+                let btn = UIButton(type: .detailDisclosure)
+                annotationView!.rightCalloutAccessoryView = btn
+            } else {
+                // 6
+                annotationView!.annotation = annotation
+            }
+            
+            return annotationView
         }
+        
+        // 7
+        return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let Pins = view.annotation as! Pins
+        let placeName = Pins.title
+        let placeInfo = Pins.info
+        
+        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
     
 
     
