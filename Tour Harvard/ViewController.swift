@@ -4,7 +4,8 @@
 //
 //  Created by Michael Cubeddu on 11/25/16.
 //  Copyright © 2016 The Boys. All rights reserved.
-//
+
+//Websites we used: http://www.appcoda.com/geo-targeting-ios/
 
 import UIKit
 import CoreLocation
@@ -19,7 +20,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let location = locations[0]
         
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.008, 0.008)
         
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
@@ -51,10 +52,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         wigg.subtitle = "Click for More Information"
         map.addAnnotation(wigg)
         
+        
         setupData()
         
         
         }
+    
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -114,13 +118,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
   
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("YES")
       
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        let alert = UIAlertController(title: "Alert", message: "exiteded", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        print("NO")
     }
     
 
