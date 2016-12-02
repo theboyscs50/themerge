@@ -18,6 +18,7 @@
 		C97FDF020CA146BDA0374753 /* Pods_Tour_HarvardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */; };
 		F26454D9CBDF9201ED90CF79 /* Pods_Tour_HarvardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */; };
 		F9344C9C1DF12FCE0009AAB2 /* infoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9344C9B1DF12FCE0009AAB2 /* infoVC.swift */; };
+		F9344CDB1DF1547B0009AAB2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9344CDA1DF1547B0009AAB2 /* AboutView.swift */; };
 		F9BFB5111DEE1C0D00D9DE59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BFB5101DEE1C0D00D9DE59 /* ViewController.swift */; };
 		F9BFB5131DEE1DD800D9DE59 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BFB5121DEE1DD800D9DE59 /* MapKit.framework */; };
 		F9BFB5151DEE214700D9DE59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9BFB5141DEE214700D9DE59 /* CoreLocation.framework */; };
@@ -64,6 +65,7 @@
 		DBD4380272ADF6308F8AD56E /* Pods-Tour Harvard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour Harvard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tour Harvard/Pods-Tour Harvard.debug.xcconfig"; sourceTree = "<group>"; };
 		EBBB02BCE9B4D2A193B40AE9 /* Pods-Tour HarvardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardTests/Pods-Tour HarvardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9344C9B1DF12FCE0009AAB2 /* infoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoVC.swift; sourceTree = "<group>"; };
+		F9344CDA1DF1547B0009AAB2 /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		F9BFB5101DEE1C0D00D9DE59 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9BFB5121DEE1DD800D9DE59 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F9BFB5141DEE214700D9DE59 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -144,6 +146,7 @@
 				4C6414121DE8E1A2000571EC /* Assets.xcassets */,
 				4C6414141DE8E1A2000571EC /* LaunchScreen.storyboard */,
 				4C6414171DE8E1A2000571EC /* Info.plist */,
+				F9344CDA1DF1547B0009AAB2 /* AboutView.swift */,
 			);
 			path = "Tour Harvard";
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				4CDBBC921DF1181C00FAF60D /* Pins.swift in Sources */,
 				F9BFB5111DEE1C0D00D9DE59 /* ViewController.swift in Sources */,
 				4C64140C1DE8E1A2000571EC /* AppDelegate.swift in Sources */,
+				F9344CDB1DF1547B0009AAB2 /* AboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,9 +11,5 @@ import MapKit
 import UIKit
 
 class infoVC: UIViewController {
-    
-    @IBAction func backButton(_ sender: Any) {
-        let firstViewController = ViewController()
-        present(firstViewController, animated: true, completion: nil)
-    }
+
 }
