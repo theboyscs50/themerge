@@ -17,8 +17,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     @IBOutlet weak var map: MKMapView!
     let locationManager = CLLocationManager()
-    let regionRadius = 20.0
-    var regions = [CLRegion]()
+    
+    let regions = [
+    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.375346, longitude: -71.116130), radius: 100.0, identifier: "Region 1 Canaday"),
+    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.371462, longitude: -71.119359), radius: 223.0, identifier: "Region 2 MAC"),
+    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.374851, longitude: -71.118190), radius: 100.0, identifier: "Region 3 Harvard Hall"),
+    CLCircularRegion(center:CLLocationCoordinate2D(latitude: 42.373911, longitude: -71.117124) , radius: 100.0, identifier: "Region 4 weld"),
+    CLCircularRegion(center:CLLocationCoordinate2D(latitude: 42.373907, longitude: -71.115140) , radius: 100.0, identifier: "Region 5 Emerson"),
+    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.378389, longitude: -71.115529) , radius: 300.0, identifier: "Region 6 Art History"),
+    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.373602, longitude: -71.118501) , radius: 76.0, identifier: "Region 7 Lehman Dudley House"),
+    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.372810, longitude: -71.115476) , radius: 76.0, identifier: "Region 8 Lamont"),
+    ]
 
     let locations = [
         Pins(title: "Wigglesworth Hall", coordinate: CLLocationCoordinate2D(latitude: 42.373043, longitude: -71.117063), info: "Freshman Dormitory"),
@@ -182,17 +191,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func setupData () {
         // check if system can monitor
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            for i in 0...19 {
-                regions.append(CLCircularRegion(center: locations[i].coordinate, radius: regionRadius, identifier:locations[i].title!))
-                
+            for i in 0...7 {
                 locationManager.startMonitoring(for: regions[i])
-                var circle = MKCircle(center:locations[i].coordinate, radius: regionRadius)
+                let circle = MKCircle(center: regions[i].center, radius: regions[i].radius)
                 map.add(circle)
-                
-                
-                
             }
         }
+    
+    
+    
     }
     
     
