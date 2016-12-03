@@ -17,6 +17,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     @IBOutlet weak var map: MKMapView!
     let locationManager = CLLocationManager()
+    var nearByLocations = [CLLocation]()
+    var curLocation = CLLocation()
     
     let regions = [
     CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.375346, longitude: -71.116130), radius: 100.0, identifier: "Region 1 Canaday"),
@@ -29,7 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.372810, longitude: -71.115476) , radius: 76.0, identifier: "Region 8 Lamont"),
     ]
 
-    let locations = [
+    let pins = [
         Pins(title: "Wigglesworth Hall", coordinate: CLLocationCoordinate2D(latitude: 42.373043, longitude: -71.117063), info: "Freshman Dormitory"),
         Pins(title: "Widener Library", coordinate: CLLocationCoordinate2D(latitude: 42.373662, longitude: -71.116430), info: "Harvard's main library!"),
         Pins(title: "Boylston Hall", coordinate: CLLocationCoordinate2D(latitude: 42.373313, longitude: -71.117293), info: "Class Building"),
@@ -80,12 +82,42 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.008, 0.008)
         
-        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        
+        curLocation = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         
         map.setRegion(region, animated: false)
         
         self.map.showsUserLocation = true
+        
+        let lengthOfArray = locations.count
+        
+        for i in 0..<lengthOfArray {
+            nearByLocations.append(CLLocation(latitude: locations[i].coordinate.latitude, longitude: locations[i].coordinate.longitude))
+        }
+        
+        
+        locationManager.startUpdatingLocation()
+        var nearestLocation = Pins(title: String(), coordinate: CLLocationCoordinate2D(), info: String())
+        
+        var shortestDistance = 1000000.0
+        for pin in pins {
+            let distance = curLocation.distance(from:CLLocation(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude))
+            if distance < shortestDistance {
+                nearestLocation = pin
+                shortestDistance = distance
+            }
+        }
+        print(nearestLocation.title ?? "Nothing")
+        print(shortestDistance)
+        
+        
+        
+        
+        newButton.setTitle(nearestLocation.title! + " - More Info",for: .normal)
+        newButton.isHidden = false
+
         
     }
 
@@ -106,15 +138,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         
         
-        let lengthOfArray = locations.count
+        let lengthOfArray = pins.count
         for i in 0..<lengthOfArray {
-            let location = locations[i]
-            map.addAnnotations([location as MKAnnotation])
+            let pin = pins[i]
+            map.addAnnotations([pin as MKAnnotation])
         }
         
 
         
-        setupData()
+        // setupData()
         
         
     }
@@ -213,8 +245,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
   
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        newButton.setTitle(region.identifier + " - More Info",for: .normal)
-        newButton.isHidden = false
         print("YES")
       
     }
