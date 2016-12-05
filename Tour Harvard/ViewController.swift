@@ -30,18 +30,28 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var curLocation = CLLocation()
     var placeLable = String()
     var closestPlace = String()
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    
+
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBAction func changeMap(_ sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            map.mapType = MKMapType.standard;
+        case 1:
+            map.mapType = MKMapType.hybrid;
+        default:
+            break; 
+        } 
+    }
+    
 
     
-    let regions = [
-    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.375346, longitude: -71.116130), radius: 100.0, identifier: "Region 1 Canaday"),
-    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.371462, longitude: -71.119359), radius: 223.0, identifier: "Region 2 MAC"),
-    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.374851, longitude: -71.118190), radius: 100.0, identifier: "Region 3 Harvard Hall"),
-    CLCircularRegion(center:CLLocationCoordinate2D(latitude: 42.373911, longitude: -71.117124) , radius: 100.0, identifier: "Region 4 weld"),
-    CLCircularRegion(center:CLLocationCoordinate2D(latitude: 42.373907, longitude: -71.115140) , radius: 100.0, identifier: "Region 5 Emerson"),
-    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.378389, longitude: -71.115529) , radius: 300.0, identifier: "Region 6 Art History"),
-    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.373602, longitude: -71.118501) , radius: 76.0, identifier: "Region 7 Lehman Dudley House"),
-    CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.372810, longitude: -71.115476) , radius: 76.0, identifier: "Region 8 Lamont"),
-    ]
 
     let pins = [
         Pins(title: "Wigglesworth Hall", coordinate: CLLocationCoordinate2D(latitude: 42.373043, longitude: -71.117063), info: "Freshman Dormitory"),
@@ -83,7 +93,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         Pins(title: "Lowell House", coordinate: CLLocationCoordinate2D(latitude: 42.370817, longitude: -71.117962), info: "Upperclassmen Dorm"),
         Pins(title: "Kennedy School Library", coordinate: CLLocationCoordinate2D(latitude: 42.371026, longitude: -71.121861), info: "Government Library"),
         Pins(title: "The Harvard Lampoon", coordinate: CLLocationCoordinate2D(latitude: 42.371630, longitude: -71.117320), info: "Coolest Building in the Square!"),
-        Pins(title: "Bureau of Study Council", coordinate: CLLocationCoordinate2D(latitude: 42.372571, longitude: -71.117413), info: "Academic Resources Building")
+        Pins(title: "Bureau of Study Council", coordinate: CLLocationCoordinate2D(latitude: 42.372571, longitude: -71.117413), info: "Academic Resources Building"),
+        Pins(title: "Adams House", coordinate: CLLocationCoordinate2D(latitude: 42.371929, longitude: -71.116866), info: "Upperclassmen Dorm")
     ]
 
     
@@ -254,47 +265,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             locationManager.startUpdatingLocation()
         }
         
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.008, 0.008)
         let initLocation = CLLocationCoordinate2DMake(curLocation.coordinate.latitude, curLocation.coordinate.longitude)
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(initLocation, span)
-        map.setRegion(region, animated: false)
+        
+        let mapCamera = MKMapCamera(lookingAtCenter: initLocation, fromDistance: 800.0, pitch: 45.0, heading: 0.0)
+        map.setCamera(mapCamera, animated: false)
 
     }
     
     
-    func setupData () {
-        // check if system can monitor
-        if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            for i in 0...7 {
-                locationManager.startMonitoring(for: regions[i])
-                let circle = MKCircle(center: regions[i].center, radius: regions[i].radius)
-                map.add(circle)
-            }
-        }
-    
-    
-    
-    }
-    
-    
-    // 6. draw circle
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let circleRenderer = MKCircleRenderer(overlay: overlay)
-        circleRenderer.strokeColor = UIColor.red
-        circleRenderer.lineWidth = 1.0
-        return circleRenderer
-    }
-    
   
-//    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-//        print("YES")
-//      
-//    }
-//    
-//    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-//        newButton.isHidden = true
-//        print("NO")
-//    }
     
     // pass building name
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

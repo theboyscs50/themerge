@@ -91,15 +91,6 @@
                                     <constraint firstAttribute="height" constant="860" id="NJ0-dN-AUY"/>
                                 </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMC-WV-HF3">
-                                <rect key="frame" x="146" y="-15" width="82" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Home"/>
-                                <connections>
-                                    <segue destination="yVu-RW-WIB" kind="show" id="RBS-xe-YjO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11u-Fy-EYQ">
                                 <rect key="frame" x="72" y="572" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,6 +103,37 @@
                                     <segue destination="NC6-Fa-zlC" kind="show" identifier="moreInfo" id="Zhd-CA-RWI"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utc-wY-fGv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="12p-Qn-9gs">
+                                        <nil key="title"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="NKd-U8-Ijp">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UMC-WV-HF3">
+                                                <rect key="frame" x="16" y="-28" width="82" height="100"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Home"/>
+                                                <connections>
+                                                    <segue destination="yVu-RW-WIB" kind="show" id="RBS-xe-YjO"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="a5c-LB-jPa">
+                                            <rect key="frame" x="117" y="8" width="141" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Standard"/>
+                                                <segment title="Hybrid"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="changeMap:" destination="BYZ-38-t0r" eventType="valueChanged" id="yhO-BG-DO9"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -124,14 +146,17 @@
                             <constraint firstItem="Pvr-uZ-3CQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xRC-O3-vzU"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="map" destination="Pvr-uZ-3CQ" id="JLE-1p-EkP"/>
                         <outlet property="newButton" destination="11u-Fy-EYQ" id="xg8-7B-ND1"/>
+                        <outlet property="segmentedControl" destination="a5c-LB-jPa" id="xvc-uY-Dme"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-730.39999999999998" y="-254.12293853073464"/>
+            <point key="canvasLocation" x="-762" y="-268"/>
         </scene>
         <!--About View-->
         <scene sceneID="e0Y-dC-1Va">
