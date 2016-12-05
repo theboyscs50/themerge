@@ -91,28 +91,6 @@
                                     <constraint firstAttribute="height" constant="860" id="NJ0-dN-AUY"/>
                                 </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqN-Of-sQ3">
-                                <rect key="frame" x="72" y="585" width="230" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.82094687219999996" green="0.12407384069999999" blue="0.15422970059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="NC6-Fa-zlC" kind="show" id="6Od-3B-2F2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjs-6C-Ffu">
-                                <rect key="frame" x="72" y="617" width="230" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.82094687219999996" green="0.12407384069999999" blue="0.15422970059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="NC6-Fa-zlC" kind="show" id="1Fg-qx-o8u"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMC-WV-HF3">
                                 <rect key="frame" x="146" y="-15" width="82" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -123,7 +101,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11u-Fy-EYQ">
-                                <rect key="frame" x="72" y="535" width="230" height="30"/>
+                                <rect key="frame" x="72" y="572" width="230" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.82094687223434448" green="0.12407384067773819" blue="0.15422970056533813" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button">
@@ -146,8 +124,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="button2" destination="CqN-Of-sQ3" id="eKL-Eb-6eF"/>
-                        <outlet property="button3" destination="mjs-6C-Ffu" id="9tx-bs-7Aj"/>
                         <outlet property="map" destination="Pvr-uZ-3CQ" id="JLE-1p-EkP"/>
                         <outlet property="newButton" destination="11u-Fy-EYQ" id="xg8-7B-ND1"/>
                     </connections>
@@ -233,8 +209,7 @@
         <image name="Untitled-3" width="2048" height="530"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8bX-f3-mbh"/>
+        <segue reference="RBS-xe-YjO"/>
         <segue reference="XZM-bm-uWt"/>
-        <segue reference="1Fg-qx-o8u"/>
     </inferredMetricsTieBreakers>
 </document>

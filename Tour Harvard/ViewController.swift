@@ -110,10 +110,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
         for pin in pins {
             let distance = curLocation.distance(from:CLLocation(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude))
-            if distance > minDistance {
-                newButton.isHidden = true
-            }
-            else if distance < shortestDistance {
+            if distance < shortestDistance {
                 nearestLocation = pin
                 shortestDistance = distance
             }
@@ -131,9 +128,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         
         
-        
-        newButton.setTitle(nearestLocation.title! + " - More Info",for: .normal)
-        newButton.isHidden = false
+        if shortestDistance != minDistance {
+            newButton.setTitle(nearestLocation.title! + " - More Info",for: .normal)
+            newButton.isHidden = false
+        }
+        else {
+            newButton.isHidden = true
+        }
         
 //        button2.setTitle(nearestLocation2.title! + " - More Info",for: .normal)
 //        button2.isHidden = false
@@ -162,7 +163,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         //map.userTrackingMode = .follow
         
         
-        
+        // add pins to map
         let lengthOfArray = pins.count
         for i in 0..<lengthOfArray {
             let pin = pins[i]
@@ -276,15 +277,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
   
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print("YES")
-      
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        newButton.isHidden = true
-        print("NO")
-    }
+//    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+//        print("YES")
+//      
+//    }
+//    
+//    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+//        newButton.isHidden = true
+//        print("NO")
+//    }
     
   
 }
