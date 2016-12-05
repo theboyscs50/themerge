@@ -12,18 +12,25 @@ import CoreLocation
 import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    
+        
     @IBOutlet weak var newButton: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
+//    @IBOutlet weak var button2: UIButton!
+//    @IBOutlet weak var button3: UIButton!
     
     @IBOutlet weak var map: MKMapView!
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        placeLable = closestPlace
+    }
     
     // initialize global
     let minDistance = 1000.0
     let locationManager = CLLocationManager()
     var nearByLocations = [CLLocation]()
     var curLocation = CLLocation()
+    var placeLable = String()
+    var closestPlace = String()
+
     
     let regions = [
     CLCircularRegion(center: CLLocationCoordinate2D(latitude: 42.375346, longitude: -71.116130), radius: 100.0, identifier: "Region 1 Canaday"),
@@ -123,9 +130,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //                shortestDistance3 = distance
 //            }
         }
-        print(nearestLocation.title ?? "Nothing")
-        print(shortestDistance)
         
+        closestPlace = nearestLocation.title!
         
         
         if shortestDistance != minDistance {
@@ -135,6 +141,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         else {
             newButton.isHidden = true
         }
+        
         
 //        button2.setTitle(nearestLocation2.title! + " - More Info",for: .normal)
 //        button2.isHidden = false
@@ -210,11 +217,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let Pins = view.annotation as! Pins
         let placeName = Pins.title
         let placeInfo = Pins.info
+        placeLable = placeName!
+
         
         let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Click for More Information", style: .default) { (_) -> Void in
             
-          self.performSegue(withIdentifier: "moreInfo", sender: nil)
+            self.performSegue(withIdentifier: "moreInfo", sender: nil)
             
         })
         ac.addAction(UIAlertAction(title: "No Thanks :(", style: .default))
@@ -287,5 +296,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 //        print("NO")
 //    }
     
-  
+    // pass building name
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secondVC = segue.destination as! infoVC
+        secondVC.passedData = placeLable
+    }
+    
+    
 }

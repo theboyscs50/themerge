@@ -10,13 +10,106 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tour Harvard/ViewController.swift"
-            timestampString = "502601503.779817"
+            timestampString = "502608892.016752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tour Harvard/infoVC.swift"
+            timestampString = "502605965.981031"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "infoVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tour_Harvard.infoVC.__deallocating_deinit"
+                  moduleName = "Tour Harvard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wfinigan/Documents/themerge/Tour%20Harvard/infoVC.swift"
+                  timestampString = "502605966.298296"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tour_Harvard.infoVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Tour_Harvard.infoVC"
+                  moduleName = "Tour Harvard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wfinigan/Documents/themerge/Tour%20Harvard/infoVC.swift"
+                  timestampString = "502605966.299913"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "70">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tour_Harvard.infoVC.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; Tour_Harvard.infoVC"
+                  moduleName = "Tour Harvard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wfinigan/Documents/themerge/Tour%20Harvard/infoVC.swift"
+                  timestampString = "502605966.303709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tour_Harvard.infoVC.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Tour_Harvard.infoVC&gt;"
+                  moduleName = "Tour Harvard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wfinigan/Documents/themerge/Tour%20Harvard/infoVC.swift"
+                  timestampString = "502605966.307464"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tour_Harvard.infoVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Tour_Harvard.infoVC&gt;"
+                  moduleName = "Tour Harvard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wfinigan/Documents/themerge/Tour%20Harvard/infoVC.swift"
+                  timestampString = "502605966.308969"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

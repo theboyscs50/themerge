@@ -108,6 +108,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0et-p0-ptm"/>
                                     <segue destination="NC6-Fa-zlC" kind="show" identifier="moreInfo" id="Zhd-CA-RWI"/>
                                 </connections>
                             </button>
@@ -184,8 +185,23 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="Y2C-sF-v0d"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="[text]" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpq-hM-dlz" userLabel="descriptionText">
+                                <rect key="frame" x="16" y="175" width="343" height="472"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.81301659345626831" green="0.12446389347314835" blue="0.15008619427680969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfS-Yw-qIj">
+                                <rect key="frame" x="16" y="67" width="343" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.81301659345626831" green="0.12446389347314835" blue="0.15008619427680969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="pVh-F6-tL2">
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7lJ-B9-tO5">
@@ -197,10 +213,14 @@
                             </connections>
                         </button>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descriptionText" destination="vpq-hM-dlz" id="hmt-Pt-DRK"/>
+                        <outlet property="lableText" destination="HfS-Yw-qIj" id="by8-d5-ZsF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XE4-oW-D9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336.80000000000001" y="-254.12293853073464"/>
+            <point key="canvasLocation" x="188" y="-254.12293853073464"/>
         </scene>
     </scenes>
     <resources>
@@ -209,7 +229,7 @@
         <image name="Untitled-3" width="2048" height="530"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Y2C-sF-v0d"/>
         <segue reference="RBS-xe-YjO"/>
-        <segue reference="XZM-bm-uWt"/>
     </inferredMetricsTieBreakers>
 </document>
