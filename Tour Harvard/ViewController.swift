@@ -14,8 +14,13 @@ import MapKit
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var newButton: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
     
     @IBOutlet weak var map: MKMapView!
+    
+    // initialize global
+    let minDistance = 1000.0
     let locationManager = CLLocationManager()
     var nearByLocations = [CLLocation]()
     var curLocation = CLLocation()
@@ -80,34 +85,46 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let location = locations[0]
         
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.008, 0.008)
-        
-        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-        
-        curLocation = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        
-        map.setRegion(region, animated: false)
+//        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.008, 0.008)
+//        
+//        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+//        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+//        map.setRegion(region, animated: false)
         
         self.map.showsUserLocation = true
         
-        let lengthOfArray = locations.count
+        curLocation = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         
-        for i in 0..<lengthOfArray {
-            nearByLocations.append(CLLocation(latitude: locations[i].coordinate.latitude, longitude: locations[i].coordinate.longitude))
-        }
+        
         
         
         locationManager.startUpdatingLocation()
         var nearestLocation = Pins(title: String(), coordinate: CLLocationCoordinate2D(), info: String())
+//        var nearestLocation2 = Pins(title: String(), coordinate: CLLocationCoordinate2D(), info: String())
+//        var nearestLocation3 = Pins(title: String(), coordinate: CLLocationCoordinate2D(), info: String())
+
         
-        var shortestDistance = 1000000.0
+        var shortestDistance = minDistance
+//        var shortestDistance2 = minDistance
+//        var shortestDistance3 = minDistance
+
         for pin in pins {
             let distance = curLocation.distance(from:CLLocation(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude))
-            if distance < shortestDistance {
+            if distance > minDistance {
+                newButton.isHidden = true
+            }
+            else if distance < shortestDistance {
                 nearestLocation = pin
                 shortestDistance = distance
             }
+//            else if distance < shortestDistance2 {
+//                nearestLocation2 = pin
+//                shortestDistance2 = distance
+//            }
+//            else if distance < shortestDistance3 {
+//                nearestLocation3 = pin
+//                shortestDistance3 = distance
+//            }
         }
         print(nearestLocation.title ?? "Nothing")
         print(shortestDistance)
@@ -117,6 +134,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         newButton.setTitle(nearestLocation.title! + " - More Info",for: .normal)
         newButton.isHidden = false
+        
+//        button2.setTitle(nearestLocation2.title! + " - More Info",for: .normal)
+//        button2.isHidden = false
+//        
+//        button3.setTitle(nearestLocation3.title! + " - More Info",for: .normal)
+//        button3.isHidden = false
+
+
 
         
     }
@@ -128,7 +153,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.delegate = self;
         locationManager.requestWhenInUseAuthorization()
-        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        locationManager.distanceFilter = kCLDistanceFilterNone;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.startUpdatingLocation()
         
@@ -218,7 +243,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         else if CLLocationManager.authorizationStatus() == .authorizedAlways {
             locationManager.startUpdatingLocation()
         }
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.008, 0.008)
+        let initLocation = CLLocationCoordinate2DMake(curLocation.coordinate.latitude, curLocation.coordinate.longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(initLocation, span)
+        map.setRegion(region, animated: false)
+
     }
+    
     
     func setupData () {
         // check if system can monitor
