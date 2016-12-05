@@ -11,17 +11,41 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
         
     @IBOutlet weak var newButton: UIButton!
-//    @IBOutlet weak var button2: UIButton!
-//    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button2: UIButton!
     
     @IBOutlet weak var map: MKMapView!
+    @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        placeLable = closestPlace
+        if (sender as AnyObject).tag == 0 {
+            placeLable = closestPlace
+        }
+        if (sender as AnyObject).tag == 1 {
+            placeLable = placeLable2
+        }
     }
+    
+    // search bar varibables
+    
+    var searchController:UISearchController!
+    var annotation:MKAnnotation!
+    var localSearchRequest:MKLocalSearchRequest!
+    var localSearch:MKLocalSearch!
+    var localSearchResponse:MKLocalSearchResponse!
+    var error:NSError!
+    var pointAnnotation:MKPointAnnotation!
+    var pinAnnotationView:MKPinAnnotationView!
+    
+    
+    
     
     // initialize global
     let minDistance = 1000.0
@@ -29,6 +53,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var nearByLocations = [CLLocation]()
     var curLocation = CLLocation()
     var placeLable = String()
+    var placeLable2 = String()
     var closestPlace = String()
     
     override var prefersStatusBarHidden: Bool {
@@ -62,7 +87,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         Pins(title: "Weld (Dorm)", coordinate: CLLocationCoordinate2D(latitude: 42.373911, longitude: -71.117124), info: "Freshman Dormitory"),
         Pins(title: "Matthews Hall", coordinate: CLLocationCoordinate2D(latitude: 42.374082, longitude: -71.118142), info: "Freshman Dormitory"),
         Pins(title: "John Harvard Statue", coordinate: CLLocationCoordinate2D(latitude: 42.374376, longitude: -71.115741), info: "Our claim to fame!"),
-        Pins(title: "Harvard Bixie Statue", coordinate: CLLocationCoordinate2D(latitude: 42.373472, longitude: -71.117007), info: "Statue donated by Chinese Harvard alumni!"),
+        Pins(title: "Harvard Bixi Statue", coordinate: CLLocationCoordinate2D(latitude: 42.373472, longitude: -71.117007), info: "Statue donated by Chinese Harvard alumni!"),
         Pins(title: "Massachusetts Hall", coordinate: CLLocationCoordinate2D(latitude: 42.374450, longitude: -71.118281), info: "Where the President works!"),
         Pins(title: "Straus Hall", coordinate: CLLocationCoordinate2D(latitude: 42.374145, longitude: -71.118592), info: "Freshman Dormitory"),
         Pins(title: "Lehman Dudley House", coordinate: CLLocationCoordinate2D(latitude: 42.373602, longitude: -71.118501), info: "Graduate School of Arts and Sciences building"),
@@ -94,7 +119,22 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         Pins(title: "Kennedy School Library", coordinate: CLLocationCoordinate2D(latitude: 42.371026, longitude: -71.121861), info: "Government Library"),
         Pins(title: "The Harvard Lampoon", coordinate: CLLocationCoordinate2D(latitude: 42.371630, longitude: -71.117320), info: "Coolest Building in the Square!"),
         Pins(title: "Bureau of Study Council", coordinate: CLLocationCoordinate2D(latitude: 42.372571, longitude: -71.117413), info: "Academic Resources Building"),
-        Pins(title: "Adams House", coordinate: CLLocationCoordinate2D(latitude: 42.371929, longitude: -71.116866), info: "Upperclassmen Dorm")
+        Pins(title: "Adams House", coordinate: CLLocationCoordinate2D(latitude: 42.371929, longitude: -71.116866), info: "Upperclassmen Dorm"),
+        Pins(title: "Quincy House", coordinate: CLLocationCoordinate2D(latitude: 42.370713, longitude: -71.117039), info: "Upperclassmen Dorm"),
+        Pins(title: "Winthrop House", coordinate: CLLocationCoordinate2D(latitude: 42.370341, longitude: -71.119341), info: "Upperclassmen Dorm"),
+        Pins(title: "Leverett House", coordinate: CLLocationCoordinate2D(latitude: 42.370054, longitude: -71.117420), info: "Upperclassmen Dorm"),
+        Pins(title: "Dunster House", coordinate: CLLocationCoordinate2D(latitude: 42.368684, longitude: -71.115924), info: "Upperclassmen Dorm"),
+        Pins(title: "Mather House", coordinate: CLLocationCoordinate2D(latitude: 42.368410, longitude: -71.115307), info: "Upperclassmen Dorm"),
+        Pins(title: "Cabot House", coordinate: CLLocationCoordinate2D(latitude: 42.381911, longitude: -71.123943), info: "Upperclassmen Dorm"),
+        Pins(title: "Currier House", coordinate: CLLocationCoordinate2D(latitude: 42.381808, longitude: -71.125542), info: "Upperclassmen Dorm"),
+        Pins(title: "Pforzheimer House", coordinate: CLLocationCoordinate2D(latitude: 42.382119, longitude: -71.124866), info: "Upperclassmen Dorm"),
+        Pins(title: "The Student Organization Center at Hilles (SOCH)", coordinate: CLLocationCoordinate2D(latitude: 42.380891, longitude: -71.125070), info: "Student Orgaization Building."),
+        Pins(title: "Porcellian Club", coordinate: CLLocationCoordinate2D(latitude: 42.372944, longitude: -71.117721), info: "Final Club"),
+        Pins(title: "The Fly Club", coordinate: CLLocationCoordinate2D(latitude: 42.371485, longitude: -71.117814), info: "Final Club"),
+        Pins(title: "The Owl Club", coordinate: CLLocationCoordinate2D(latitude: 42.371539, longitude: -71.118667), info: "Final Club"),
+        Pins(title: "The A.D. Club", coordinate: CLLocationCoordinate2D(latitude: 42.372552, longitude: -71.116567), info: "Final Club"),
+        Pins(title: "The Delphic Club", coordinate: CLLocationCoordinate2D(latitude: 42.372386, longitude: -71.117458), info: "Final Club"),
+
     ]
 
     
@@ -102,12 +142,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations[0]
-        
-//        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.008, 0.008)
-//        
-//        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-//        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-//        map.setRegion(region, animated: false)
         
         self.map.showsUserLocation = true
         
@@ -118,13 +152,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         locationManager.startUpdatingLocation()
         var nearestLocation = Pins(title: String(), coordinate: CLLocationCoordinate2D(), info: String())
-//        var nearestLocation2 = Pins(title: String(), coordinate: CLLocationCoordinate2D(), info: String())
-//        var nearestLocation3 = Pins(title: String(), coordinate: CLLocationCoordinate2D(), info: String())
+        var nearestLocation2 = Pins(title: String(), coordinate: CLLocationCoordinate2D(), info: String())
+
 
         
         var shortestDistance = minDistance
-//        var shortestDistance2 = minDistance
-//        var shortestDistance3 = minDistance
+        var shortestDistance2 = minDistance
+
 
         for pin in pins {
             let distance = curLocation.distance(from:CLLocation(latitude: pin.coordinate.latitude, longitude: pin.coordinate.longitude))
@@ -132,17 +166,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 nearestLocation = pin
                 shortestDistance = distance
             }
-//            else if distance < shortestDistance2 {
-//                nearestLocation2 = pin
-//                shortestDistance2 = distance
-//            }
-//            else if distance < shortestDistance3 {
-//                nearestLocation3 = pin
-//                shortestDistance3 = distance
-//            }
+           else if distance < shortestDistance2 {
+                nearestLocation2 = pin
+                shortestDistance2 = distance
+            }
         }
         
         closestPlace = nearestLocation.title!
+        placeLable2 = nearestLocation2.title!
+        
         
         
         if shortestDistance != minDistance {
@@ -154,11 +186,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
         
         
-//        button2.setTitle(nearestLocation2.title! + " - More Info",for: .normal)
-//        button2.isHidden = false
-//        
-//        button3.setTitle(nearestLocation3.title! + " - More Info",for: .normal)
-//        button3.isHidden = false
+        button2.setTitle(nearestLocation2.title! + " - More Info",for: .normal)
+        button2.isHidden = false
+
 
 
 
@@ -178,7 +208,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         map.delegate = self
         map.showsUserLocation = true
-        //map.userTrackingMode = .follow
+      
         
         
         // add pins to map
@@ -190,7 +220,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
 
         
-        // setupData()
         
         
     }
@@ -283,6 +312,33 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
         
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        //1
+        searchBar.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+        if self.map.annotations.count != 0{
+            annotation = self.map.annotations[0]
+            self.map.removeAnnotation(annotation)
+        }
+        //2
+        localSearchRequest = MKLocalSearchRequest()
+        localSearchRequest.naturalLanguageQuery = searchBar.text
+        localSearch = MKLocalSearch(request: localSearchRequest)
+        localSearch.start { (localSearchResponse, error) -> Void in
+            
+            if localSearchResponse == nil{
+                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            //3
+            self.pointAnnotation = MKPointAnnotation()
+            self.pointAnnotation.title = searchBar.text
+            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
+            
+            
+        }
+    }
     
 }

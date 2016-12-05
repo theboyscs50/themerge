@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-3" translatesAutoresizingMaskIntoConstraints="NO" id="bv5-Jr-KZs">
-                                <rect key="frame" x="16" y="28" width="343" height="118"/>
+                                <rect key="frame" x="16" y="8" width="343" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="ABm-OO-ENI"/>
                                 </constraints>
@@ -65,6 +65,7 @@
                             <constraint firstItem="feV-Ty-6gk" firstAttribute="centerY" secondItem="v4N-Zs-cVL" secondAttribute="centerY" id="wTL-Vb-BM7"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkS-Xr-4jt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,8 +105,9 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utc-wY-fGv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="-1" y="0.0" width="376" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                                 <items>
                                     <navigationItem id="12p-Qn-9gs">
                                         <nil key="title"/>
@@ -121,7 +123,7 @@
                                             </button>
                                         </barButtonItem>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="a5c-LB-jPa">
-                                            <rect key="frame" x="117" y="8" width="141" height="29"/>
+                                            <rect key="frame" x="118" y="8" width="141" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Standard"/>
@@ -131,9 +133,27 @@
                                                 <action selector="changeMap:" destination="BYZ-38-t0r" eventType="valueChanged" id="yhO-BG-DO9"/>
                                             </connections>
                                         </segmentedControl>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="euc-dD-V82">
+                                            <connections>
+                                                <action selector="showSearchBar:" destination="BYZ-38-t0r" id="jSe-PO-IrN"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEO-6f-BB0">
+                                <rect key="frame" x="72" y="617" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82094687219999996" green="0.12407384069999999" blue="0.15422970059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="button2"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bWf-xX-Reo"/>
+                                    <segue destination="NC6-Fa-zlC" kind="show" identifier="moreInfo" id="FSp-1U-jBo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -149,6 +169,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="button2" destination="tEO-6f-BB0" id="AbB-gC-L2L"/>
                         <outlet property="map" destination="Pvr-uZ-3CQ" id="JLE-1p-EkP"/>
                         <outlet property="newButton" destination="11u-Fy-EYQ" id="xg8-7B-ND1"/>
                         <outlet property="segmentedControl" destination="a5c-LB-jPa" id="xvc-uY-Dme"/>
@@ -156,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762" y="-268"/>
+            <point key="canvasLocation" x="-762.39999999999998" y="-268.51574212893553"/>
         </scene>
         <!--About View-->
         <scene sceneID="e0Y-dC-1Va">
@@ -254,7 +275,8 @@
         <image name="Untitled-3" width="2048" height="530"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Y2C-sF-v0d"/>
+        <segue reference="XZM-bm-uWt"/>
         <segue reference="RBS-xe-YjO"/>
+        <segue reference="FSp-1U-jBo"/>
     </inferredMetricsTieBreakers>
 </document>
