@@ -193,7 +193,7 @@
                                     <navigationItem id="12p-Qn-9gs">
                                         <nil key="title"/>
                                         <leftBarButtonItems>
-                                            <barButtonItem style="plain" id="NKd-U8-Ijp">
+                                            <barButtonItem style="done" id="NKd-U8-Ijp">
                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UMC-WV-HF3">
                                                     <rect key="frame" x="16" y="-28" width="82" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -204,7 +204,7 @@
                                                     </connections>
                                                 </button>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" width="6" style="plain" id="qPE-lj-n3z">
+                                            <barButtonItem title="Item" width="6" style="done" id="qPE-lj-n3z">
                                                 <inset key="imageInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <button key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n2q-Lf-Ywe">
                                                     <rect key="frame" x="106" y="7" width="84" height="30"/>
@@ -392,7 +392,7 @@
         <image name="VeriTour Header" width="3000" height="780"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="amA-zM-8Tc"/>
+        <segue reference="RBS-xe-YjO"/>
         <segue reference="XZM-bm-uWt"/>
         <segue reference="Zhd-CA-RWI"/>
     </inferredMetricsTieBreakers>
