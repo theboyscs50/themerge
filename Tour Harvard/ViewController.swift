@@ -11,18 +11,16 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    // create outlets from storyboard
         
     @IBOutlet weak var newButton: UIButton!
     @IBOutlet weak var button2: UIButton!
     
     @IBOutlet weak var map: MKMapView!
-    @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.delegate = self
-        present(searchController, animated: true, completion: nil)
-    }
+
+    // show buttons for two closest locations
     
     @IBAction func buttonPressed(_ sender: Any) {
         if (sender as AnyObject).tag == 0 {
@@ -33,17 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
     
-    // search bar varibables
-    
-    var searchController:UISearchController!
-    var annotation:MKAnnotation!
-    var localSearchRequest:MKLocalSearchRequest!
-    var localSearch:MKLocalSearch!
-    var localSearchResponse:MKLocalSearchResponse!
-    var error:NSError!
-    var pointAnnotation:MKPointAnnotation!
-    var pinAnnotationView:MKPinAnnotationView!
-    
+
     
     
     
@@ -56,12 +44,15 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     var placeLable2 = String()
     var closestPlace = String()
     
+    // hide the status bar
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
     
     
-
+    // creates two options for mapview, that are clickable
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func changeMap(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex
@@ -76,7 +67,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
 
-    
+    // array of pins
 
     let pins = [
         Pins(title: "Wigglesworth Hall", coordinate: CLLocationCoordinate2D(latitude: 42.373043, longitude: -71.117063), info: "Freshman Dormitory"),
@@ -139,7 +130,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         Pins(title: "John Harvard Statue", coordinate: CLLocationCoordinate2D(latitude: 42.3745, longitude: -71.1172), info: "Our claim to fame!"),
     ]
 
-    
+    // set up locationamager
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -225,6 +216,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         
     }
+    // add interactivity to annotations, add the detail disclosure button
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // 1
@@ -255,6 +247,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         return nil
     }
     
+    // add button after hitting the detail disclosure button.
+    // Two options, one for more info, one to go back to the map
+    
      func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let Pins = view.annotation as! Pins
         let placeName = Pins.title
@@ -276,7 +271,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     
-
+    //authenticate location
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -295,14 +290,27 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         else if CLLocationManager.authorizationStatus() == .authorizedAlways {
             locationManager.startUpdatingLocation()
         }
+        // set initial location
         
-        let initLocation = CLLocationCoordinate2DMake(curLocation.coordinate.latitude, curLocation.coordinate.longitude)
+        let initLocation = CLLocationCoordinate2DMake(42.3744, -71.1163)
+        
+        //start map with a tilt
         
         let mapCamera = MKMapCamera(lookingAtCenter: initLocation, fromDistance: 800.0, pitch: 45.0, heading: 0.0)
         map.setCamera(mapCamera, animated: false)
 
     }
     
+    @IBAction func currLocation(_ sender: UIButton) {
+        
+        let initLocation = CLLocationCoordinate2DMake(curLocation.coordinate.latitude, curLocation.coordinate.longitude)
+        
+        //start map with a tilt
+        
+        let mapCamera = MKMapCamera(lookingAtCenter: initLocation, fromDistance: 800.0, pitch: 45.0, heading: 0.0)
+        map.setCamera(mapCamera, animated: false)
+        
+    }
     
   
     
@@ -313,5 +321,5 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             secondVC.passedData = placeLable
         }
     }
-        
+    
 }

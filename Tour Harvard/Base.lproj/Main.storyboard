@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -112,28 +113,59 @@
                                 <items>
                                     <navigationItem id="12p-Qn-9gs">
                                         <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="NKd-U8-Ijp">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UMC-WV-HF3">
-                                                <rect key="frame" x="16" y="-28" width="82" height="100"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                <state key="normal" title="Home"/>
+                                        <leftBarButtonItems>
+                                            <barButtonItem style="plain" id="NKd-U8-Ijp">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UMC-WV-HF3">
+                                                    <rect key="frame" x="16" y="-28" width="82" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Home"/>
+                                                    <connections>
+                                                        <segue destination="yVu-RW-WIB" kind="show" id="RBS-xe-YjO"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" width="6" style="plain" id="qPE-lj-n3z">
+                                                <inset key="imageInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <button key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n2q-Lf-Ywe">
+                                                    <rect key="frame" x="106" y="7" width="84" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <edgeInsets key="layoutMargins" top="8" left="12" bottom="8" right="8"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="My Location">
+                                                        <color key="titleShadowColor" red="0.82094687219999996" green="0.12407384069999999" blue="0.15422970059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="currLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QCl-FA-4lq"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                        <rightBarButtonItems>
+                                            <barButtonItem style="done" id="f78-3f-Frf">
+                                                <inset key="imageInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                                                <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="a5c-LB-jPa">
+                                                    <rect key="frame" x="232" y="8" width="128" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="Standard"/>
+                                                        <segment title="Hybrid"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="changeMap:" destination="BYZ-38-t0r" eventType="valueChanged" id="yhO-BG-DO9"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </barButtonItem>
+                                            <barButtonItem title="Current Location" style="plain" id="VGP-kO-5SY">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="currLocation" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Pt-dW-hgO">
+                                                    <rect key="frame" x="194" y="7" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </button>
                                                 <connections>
-                                                    <segue destination="yVu-RW-WIB" kind="show" id="RBS-xe-YjO"/>
+                                                    <action selector="currLocation:" destination="BYZ-38-t0r" id="06i-Qk-jdh"/>
                                                 </connections>
-                                            </button>
-                                        </barButtonItem>
-                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" id="a5c-LB-jPa">
-                                            <rect key="frame" x="118" y="8" width="141" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Standard"/>
-                                                <segment title="Hybrid"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="changeMap:" destination="BYZ-38-t0r" eventType="valueChanged" id="yhO-BG-DO9"/>
-                                            </connections>
-                                        </segmentedControl>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -173,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762.39999999999998" y="-268.51574212893553"/>
+            <point key="canvasLocation" x="-473" y="-393"/>
         </scene>
         <!--About View-->
         <scene sceneID="e0Y-dC-1Va">
