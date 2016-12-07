@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		125BABD06DDB8F2CE7DAA72E /* Pods_Tour_Harvard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A811AB8C2DFDBD3E4F5AFC8E /* Pods_Tour_Harvard.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		4C64140C1DE8E1A2000571EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64140B1DE8E1A2000571EC /* AppDelegate.swift */; };
 		4C6414111DE8E1A2000571EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C64140F1DE8E1A2000571EC /* Main.storyboard */; };
 		4C6414131DE8E1A2000571EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C6414121DE8E1A2000571EC /* Assets.xcassets */; };
@@ -15,8 +14,6 @@
 		4C6414211DE8E1A2000571EC /* Tour_HarvardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6414201DE8E1A2000571EC /* Tour_HarvardTests.swift */; };
 		4C64142C1DE8E1A2000571EC /* Tour_HarvardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64142B1DE8E1A2000571EC /* Tour_HarvardUITests.swift */; };
 		4CDBBC921DF1181C00FAF60D /* Pins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDBBC911DF1181C00FAF60D /* Pins.swift */; };
-		C97FDF020CA146BDA0374753 /* Pods_Tour_HarvardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */; };
-		F26454D9CBDF9201ED90CF79 /* Pods_Tour_HarvardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */; };
 		F910AFB81DF7DAD400BDB4E6 /* menuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910AFB71DF7DAD400BDB4E6 /* menuVC.swift */; };
 		F910AFBA1DF7DF7300BDB4E6 /* helpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F910AFB91DF7DF7300BDB4E6 /* helpView.swift */; };
 		F9344C9C1DF12FCE0009AAB2 /* infoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9344C9B1DF12FCE0009AAB2 /* infoVC.swift */; };
@@ -44,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B17D39DCA9F8F146CAE03F2 /* Pods-Tour Harvard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour Harvard.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tour Harvard/Pods-Tour Harvard.release.xcconfig"; sourceTree = "<group>"; };
 		4C6414081DE8E1A2000571EC /* Tour Harvard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tour Harvard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C64140B1DE8E1A2000571EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C6414101DE8E1A2000571EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,14 +54,6 @@
 		4C64142B1DE8E1A2000571EC /* Tour_HarvardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour_HarvardUITests.swift; sourceTree = "<group>"; };
 		4C64142D1DE8E1A2000571EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CDBBC911DF1181C00FAF60D /* Pins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pins.swift; path = ../Pins.swift; sourceTree = "<group>"; };
-		5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tour_HarvardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tour_HarvardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		99F9478966A313EE7A58BBC0 /* Pods-Tour HarvardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardTests/Pods-Tour HarvardTests.release.xcconfig"; sourceTree = "<group>"; };
-		9BCE9E2E18BDB7E4C73BCCA4 /* Pods-Tour HarvardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardUITests/Pods-Tour HarvardUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A6AFEC6E9BB33EC73D9B50F9 /* Pods-Tour HarvardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardUITests/Pods-Tour HarvardUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A811AB8C2DFDBD3E4F5AFC8E /* Pods_Tour_Harvard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tour_Harvard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBD4380272ADF6308F8AD56E /* Pods-Tour Harvard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour Harvard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tour Harvard/Pods-Tour Harvard.debug.xcconfig"; sourceTree = "<group>"; };
-		EBBB02BCE9B4D2A193B40AE9 /* Pods-Tour HarvardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tour HarvardTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tour HarvardTests/Pods-Tour HarvardTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F910AFB71DF7DAD400BDB4E6 /* menuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
 		F910AFB91DF7DF7300BDB4E6 /* helpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = helpView.swift; sourceTree = "<group>"; };
 		F9344C9B1DF12FCE0009AAB2 /* infoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoVC.swift; sourceTree = "<group>"; };
@@ -82,7 +70,6 @@
 			files = (
 				F9BFB5151DEE214700D9DE59 /* CoreLocation.framework in Frameworks */,
 				F9BFB5131DEE1DD800D9DE59 /* MapKit.framework in Frameworks */,
-				125BABD06DDB8F2CE7DAA72E /* Pods_Tour_Harvard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F26454D9CBDF9201ED90CF79 /* Pods_Tour_HarvardTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +84,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C97FDF020CA146BDA0374753 /* Pods_Tour_HarvardUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,9 +95,6 @@
 			children = (
 				F9BFB5141DEE214700D9DE59 /* CoreLocation.framework */,
 				F9BFB5121DEE1DD800D9DE59 /* MapKit.framework */,
-				A811AB8C2DFDBD3E4F5AFC8E /* Pods_Tour_Harvard.framework */,
-				5C7C5245065F2985F9F7829F /* Pods_Tour_HarvardTests.framework */,
-				862EE8C7F8896A017951330F /* Pods_Tour_HarvardUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,7 +106,6 @@
 				4C64141F1DE8E1A2000571EC /* Tour HarvardTests */,
 				4C64142A1DE8E1A2000571EC /* Tour HarvardUITests */,
 				4C6414091DE8E1A2000571EC /* Products */,
-				9E5560CDA630B63D58922D1F /* Pods */,
 				444E49088A3A2516DD2E6123 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -173,19 +154,6 @@
 				4C64142D1DE8E1A2000571EC /* Info.plist */,
 			);
 			path = "Tour HarvardUITests";
-			sourceTree = "<group>";
-		};
-		9E5560CDA630B63D58922D1F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DBD4380272ADF6308F8AD56E /* Pods-Tour Harvard.debug.xcconfig */,
-				2B17D39DCA9F8F146CAE03F2 /* Pods-Tour Harvard.release.xcconfig */,
-				EBBB02BCE9B4D2A193B40AE9 /* Pods-Tour HarvardTests.debug.xcconfig */,
-				99F9478966A313EE7A58BBC0 /* Pods-Tour HarvardTests.release.xcconfig */,
-				A6AFEC6E9BB33EC73D9B50F9 /* Pods-Tour HarvardUITests.debug.xcconfig */,
-				9BCE9E2E18BDB7E4C73BCCA4 /* Pods-Tour HarvardUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -635,7 +603,6 @@
 		};
 		4C6414311DE8E1A2000571EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBD4380272ADF6308F8AD56E /* Pods-Tour Harvard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -652,7 +619,6 @@
 		};
 		4C6414321DE8E1A2000571EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B17D39DCA9F8F146CAE03F2 /* Pods-Tour Harvard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -668,7 +634,6 @@
 		};
 		4C6414341DE8E1A2000571EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBBB02BCE9B4D2A193B40AE9 /* Pods-Tour HarvardTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -684,7 +649,6 @@
 		};
 		4C6414351DE8E1A2000571EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99F9478966A313EE7A58BBC0 /* Pods-Tour HarvardTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -699,7 +663,6 @@
 		};
 		4C6414371DE8E1A2000571EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6AFEC6E9BB33EC73D9B50F9 /* Pods-Tour HarvardUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Tour HarvardUITests/Info.plist";
@@ -713,7 +676,6 @@
 		};
 		4C6414381DE8E1A2000571EC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BCE9E2E18BDB7E4C73BCCA4 /* Pods-Tour HarvardUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Tour HarvardUITests/Info.plist";
