@@ -6,12 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="SuL-K1-Jme">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIr-vW-TqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="h5w-b1-7e5" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NCx-th-N0U"/>
@@ -21,25 +23,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Untitled-3" translatesAutoresizingMaskIntoConstraints="NO" id="jOC-JT-WeO">
-                                <rect key="frame" x="16" y="52" width="343" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Untitled-4" translatesAutoresizingMaskIntoConstraints="NO" id="fc5-lv-PnM">
-                                <rect key="frame" x="16" y="158" width="343" height="465"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ovI-nx-idw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VeriTour Header" translatesAutoresizingMaskIntoConstraints="NO" id="abj-sE-kPA">
+                                        <rect key="frame" x="34" y="8" width="306" height="112"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="112" id="Bu2-IZ-wWS"/>
+                                            <constraint firstAttribute="width" constant="306" id="TVh-fO-NKB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="abj-sE-kPA" firstAttribute="leading" secondItem="ovI-nx-idw" secondAttribute="leading" constant="34" id="1rP-Cp-gX6"/>
+                                    <constraint firstItem="abj-sE-kPA" firstAttribute="centerX" secondItem="ovI-nx-idw" secondAttribute="centerX" id="FJh-PQ-BJP"/>
+                                    <constraint firstItem="abj-sE-kPA" firstAttribute="top" secondItem="ovI-nx-idw" secondAttribute="topMargin" id="M2K-zZ-wvw"/>
+                                    <constraint firstItem="abj-sE-kPA" firstAttribute="bottom" secondItem="ovI-nx-idw" secondAttribute="bottomMargin" id="uCh-n0-a0A"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-4" translatesAutoresizingMaskIntoConstraints="NO" id="dzU-Ib-lkV">
+                                <rect key="frame" x="16" y="181" width="343" height="407"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="407" id="Wpb-z2-sc7"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.82094687223434448" green="0.12407384067773819" blue="0.15422970056533813" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dzU-Ib-lkV" firstAttribute="top" secondItem="ovI-nx-idw" secondAttribute="bottom" constant="53" id="Jph-PQ-OM6"/>
+                            <constraint firstItem="dzU-Ib-lkV" firstAttribute="centerX" secondItem="ovI-nx-idw" secondAttribute="centerX" id="LZ3-zk-V90"/>
+                            <constraint firstItem="Bba-Ls-EU7" firstAttribute="top" secondItem="dzU-Ib-lkV" secondAttribute="bottom" constant="79" id="Pr9-Cf-ASi"/>
+                            <constraint firstItem="dzU-Ib-lkV" firstAttribute="trailing" secondItem="NKB-eV-7ED" secondAttribute="trailingMargin" id="nHw-9C-2KS"/>
+                            <constraint firstItem="dzU-Ib-lkV" firstAttribute="leading" secondItem="NKB-eV-7ED" secondAttribute="leadingMargin" id="z9p-zW-EEi"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIr-vW-TqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="149.59999999999999" y="-140.77961019490255"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Untitled-3" width="2048" height="530"/>
         <image name="Untitled-4" width="2530" height="3000"/>
+        <image name="VeriTour Header" width="3000" height="780"/>
     </resources>
 </document>
