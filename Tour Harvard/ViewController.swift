@@ -86,7 +86,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         Pins(title: "Grays (Dorm)", coordinate: CLLocationCoordinate2D(latitude: 42.373663, longitude: -71.117816), info: "Freshman Dormitory"),
         Pins(title: "Weld (Dorm)", coordinate: CLLocationCoordinate2D(latitude: 42.373911, longitude: -71.117124), info: "Freshman Dormitory"),
         Pins(title: "Matthews Hall", coordinate: CLLocationCoordinate2D(latitude: 42.374082, longitude: -71.118142), info: "Freshman Dormitory"),
-        Pins(title: "John Harvard Statue", coordinate: CLLocationCoordinate2D(latitude: 42.374376, longitude: -71.115741), info: "Our claim to fame!"),
         Pins(title: "Harvard Bixi Statue", coordinate: CLLocationCoordinate2D(latitude: 42.373472, longitude: -71.117007), info: "Statue donated by Chinese Harvard alumni!"),
         Pins(title: "Massachusetts Hall", coordinate: CLLocationCoordinate2D(latitude: 42.374450, longitude: -71.118281), info: "Where the President works!"),
         Pins(title: "Straus Hall", coordinate: CLLocationCoordinate2D(latitude: 42.374145, longitude: -71.118592), info: "Freshman Dormitory"),
@@ -134,7 +133,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         Pins(title: "The Owl Club", coordinate: CLLocationCoordinate2D(latitude: 42.371539, longitude: -71.118667), info: "Final Club"),
         Pins(title: "The A.D. Club", coordinate: CLLocationCoordinate2D(latitude: 42.372552, longitude: -71.116567), info: "Final Club"),
         Pins(title: "The Delphic Club", coordinate: CLLocationCoordinate2D(latitude: 42.372386, longitude: -71.117458), info: "Final Club"),
-
+        Pins(title: "Harvard Stadium", coordinate: CLLocationCoordinate2D(latitude: 42.366709, longitude: -71.126754), info: "Football Stadium"),
+        Pins(title: "Harvard Business School", coordinate: CLLocationCoordinate2D(latitude: 42.365520, longitude: -71.122141), info: "THE B School!"),
+        Pins(title: "Harvard Law School", coordinate: CLLocationCoordinate2D(latitude: 42.378091, longitude: -71.118858), info: "THE Law School!"),
+        Pins(title: "John Harvard Statue", coordinate: CLLocationCoordinate2D(latitude: 42.3745, longitude: -71.1172), info: "Our claim to fame!"),
     ]
 
     
@@ -312,33 +314,4 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
         
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
-        //1
-        searchBar.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
-        if self.map.annotations.count != 0{
-            annotation = self.map.annotations[0]
-            self.map.removeAnnotation(annotation)
-        }
-        //2
-        localSearchRequest = MKLocalSearchRequest()
-        localSearchRequest.naturalLanguageQuery = searchBar.text
-        localSearch = MKLocalSearch(request: localSearchRequest)
-        localSearch.start { (localSearchResponse, error) -> Void in
-            
-            if localSearchResponse == nil{
-                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
-                return
-            }
-            //3
-            self.pointAnnotation = MKPointAnnotation()
-            self.pointAnnotation.title = searchBar.text
-            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
-            
-            
-        }
-    }
-    
 }

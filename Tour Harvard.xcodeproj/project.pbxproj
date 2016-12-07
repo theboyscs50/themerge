@@ -259,7 +259,7 @@
 				TargetAttributes = {
 					4C6414071DE8E1A1000571EC = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 5N67E3B5ZT;
+						DevelopmentTeam = A253AL32NJ;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -631,11 +631,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5N67E3B5ZT;
+				DEVELOPMENT_TEAM = A253AL32NJ;
 				INFOPLIST_FILE = "Tour Harvard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "cs50.Tour-HarvardTheBoyss";
+				PRODUCT_BUNDLE_IDENTIFIER = "cs50.Tour-HarvardTheBoys";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -648,10 +648,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5N67E3B5ZT;
+				DEVELOPMENT_TEAM = A253AL32NJ;
 				INFOPLIST_FILE = "Tour Harvard/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "cs50.Tour-HarvardTheBoyss";
+				PRODUCT_BUNDLE_IDENTIFIER = "cs50.Tour-HarvardTheBoys";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
